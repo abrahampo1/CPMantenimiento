@@ -26,33 +26,38 @@ if (isset($_POST['sendping'])) {
             }
         }
     } else {
-        exec('ping -c2 -q ' . $ip, $pingout);
-        $pong = explode(',', $pingout[3]);
-        if (!isset($pong[2])) {
-            $conectado = false;
-            $estado = 'Desconectado';
-        } else {
+        if ($ip != '') {
+            exec('ping -c2 -q ' . $ip, $pingout);
+            $pong = explode(',', $pingout[3]);
+            if (!isset($pong[2])) {
+                $conectado = false;
+                $estado = 'Desconectado';
+            } else {
 
-            $pongpor = explode('%', $pong[2]);
-            $estado = 'Desconectado';
-            if ($conectado == false) {
-                if ($pongpor[0] == '0') {
-                    $estado = 'Conectado';
-                    echo '<p>Conectado</p>';
-                    $conectado = true;
-                    $ipbuena = $ip;
-                } else {
-                    $estado = 'Desconectado';
+                $pongpor = explode('%', $pong[2]);
+                $estado = 'Desconectado';
+                if ($conectado == false) {
+                    if ($pongpor[0] == '0') {
+                        $estado = 'Conectado';
+                        echo '<p>Conectado</p>';
+                        $conectado = true;
+                        $ipbuena = $ip;
+                    } else {
+                        $estado = 'Desconectado';
+                    }
                 }
             }
+        }else
+        {
+            $estado = 'Desconectado';
+            $conectado = false;
         }
     }
     $ahora = time();
     if ($conectado == false) {
         echo '<p>Desconectado</p>';
     }
-    if(isset($ipbuena))
-    {
+    if (isset($ipbuena)) {
         $sql = "UPDATE `ordenadores` SET `ip_buena` = '$ipbuena' WHERE `ordenadores`.`id` = $aparato";
         if (!mysqli_query($link, $sql)) {
             echo mysqli_error($link);

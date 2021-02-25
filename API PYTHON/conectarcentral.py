@@ -64,8 +64,11 @@ while True:
     ram_total = get_size(svmem.total)
     partitions = psutil.disk_partitions()
     for partition in partitions:
-        partition_usage = psutil.disk_usage(partition.mountpoint)
-        disco_total = partition_usage.total
+        try:
+            partition_usage = psutil.disk_usage(partition.mountpoint)
+            disco_total += int(partition_usage.total)
+        except:
+            disco_total += 0
     if_addrs = psutil.net_if_addrs()
     for interface_name, interface_addresses in if_addrs.items():
         for address in interface_addresses:
