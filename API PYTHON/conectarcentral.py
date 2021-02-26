@@ -91,7 +91,10 @@ while True:
     for line in texto:
         if(line == 'apagar'):
             os.system('pmset sleepnow')
-            os.system('shutdown /h')
+            os.system('shutdown /s')
             print('Suspendiendo...')
+        if(line == 'comando'):
+            comando = line.split(': ')
+            os.system(comando[1])
         print(line , sep='',end ='\r')
     sleep(1)
