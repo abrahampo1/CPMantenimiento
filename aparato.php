@@ -164,9 +164,9 @@ if (isset($_POST["nombre"])) {
                                         ?>
 
                         <div>
-                        <a href="aparato.php?a=<?php echo $info["id"] ?>&apagar=1" class="d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm"><i class="fas fa-paper fa-sm text-white-50"></i> Apagar</a>
-                        <a href="#" data-toggle="modal" data-target="#api" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-paper fa-sm text-white-50"></i> API</a>
-                            <a href="#" onclick="loaddata()" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-paper-plane fa-sm text-white-50"></i> Enviar Ping</a>
+                        <a href="aparato.php?a=<?php echo $info["id"] ?>&apagar=1" class="d-sm-inline-block btn btn-sm btn-danger shadow-sm"><i class="fas fa-paper fa-sm text-white-50"></i> Apagar</a>
+                        <a href="#" data-toggle="modal" data-target="#api" class="d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-paper fa-sm text-white-50"></i> API</a>
+                            <a href="#" onclick="loaddata()" class="d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-paper-plane fa-sm text-white-50"></i> Enviar Ping</a>
                             <?
                         if(isset($_GET["edit"]))
                         {
