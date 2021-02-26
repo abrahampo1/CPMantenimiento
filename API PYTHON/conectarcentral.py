@@ -12,11 +12,11 @@ ram_total = 0
 cpu_percent = 0
 red = ""
 def get_size(bytes, suffix="B"):
-        factor = 1024
-        for unit in ["", "K", "M", "G", "T", "P"]:
-            if bytes < factor:
-                return f"{bytes:.2f}{unit}{suffix}"
-            bytes /= factor
+    factor = 1024
+    for unit in ["", "K", "M", "G", "T", "P"]:
+        if bytes < factor:
+            return f"{bytes:.2f}{unit}{suffix}"
+        bytes /= factor
 try:
     tokenread = open("token.txt")
     texto = tokenread.read()
