@@ -32,7 +32,7 @@ missing module named urllib.quote_plus - imported by urllib (conditional), reque
 missing module named urllib.unquote - imported by urllib (conditional), requests.compat (conditional)
 missing module named urllib.quote - imported by urllib (conditional), requests.compat (conditional)
 missing module named 'org.python' - imported by copy (optional), xml.sax (delayed, conditional)
-missing module named 'java.lang' - imported by platform (delayed, optional), xml.sax._exceptions (conditional)
+missing module named 'java.lang' - imported by platform (delayed, optional), getmac.getmac (conditional, optional), xml.sax._exceptions (conditional)
 missing module named multiprocessing.BufferTooShort - imported by multiprocessing (top-level), multiprocessing.connection (top-level)
 missing module named multiprocessing.AuthenticationError - imported by multiprocessing (top-level), multiprocessing.connection (top-level)
 missing module named asyncio.DefaultEventLoopPolicy - imported by asyncio (delayed, conditional), asyncio.events (delayed, conditional)

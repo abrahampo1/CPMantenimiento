@@ -6,6 +6,7 @@ from datetime import datetime
 import os
 import subprocess
 import sys
+from getmac import get_mac_address as gma
 cpu = "Default"
 error = "OK"
 ram_total = 0
@@ -52,8 +53,9 @@ if(len(texto)) == 0:
 else:
     apitoken = texto
     print("usando token: " + apitoken)
-
+print(gma())
 while True:
+    mac = gma()
     disco_total = 0
     red = ''
     uname = platform.uname()
@@ -84,6 +86,7 @@ while True:
         'ramtotal' : ram_total,
         'discototal' : disco_total,
         'red' : red,
+        'mac' : mac
             }
     x = requests.post(url, data = myobj)
     texto = x.text.split(';')
