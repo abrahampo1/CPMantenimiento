@@ -1,6 +1,6 @@
 <?
 $servername = "localhost";
-$database = "cpm";
+$database = "cpmback";
 $username = "root";
 $password = "";
 // Create connection

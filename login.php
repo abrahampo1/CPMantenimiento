@@ -9,7 +9,7 @@ if(isset($_POST["user"]) && isset($_POST["pass"]))
 $nombre = $_POST["user"];
 $pass = $_POST["pass"];
 include("database.php");
-$sql = "SELECT * FROM tecnicos WHERE user = '$nombre'";
+$sql = "SELECT * FROM tecnicos WHERE mail = '$nombre'";
 $do = mysqli_query($link, $sql);
 $result = mysqli_fetch_assoc($do);
 if(password_verify($pass, $result["clave"]))
